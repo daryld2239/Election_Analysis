@@ -1,18 +1,14 @@
-# The data we need to retrieve.
+# Add our dependencies.
 import csv
 import os
 # Assign a variable for the file to load and the path.
 file_to_load = os.path.join("Resources", "election_results.csv")
 # Assign a variable to save the file to a path
 file_to_save = os.path.join("analysis", "election_analysis.txt")
-
 # Intialize a total vote counter
 total_votes = 0
-
-#Candidate Options
+#Candidate Options and Candidate Votes
 candidate_options = []
-
-#1. Declare the emty dictionary
 candidate_votes = {}
 # Winning Candidate and Winning Count Tracker
 
@@ -48,11 +44,6 @@ with open(file_to_load) as election_data:
         # Add a vote that candidate's count.
         candidate_votes[candidate_name] += 1
 
-#Print the candidate list.
-print(candidate_votes) 
-# 4. Percentage of votes each candidate won
-# Determine the percentage of votes for each candidate by looping through the counts.
-# 1. Iterate through the candidate list.
 for candidate_name in candidate_votes:
     # Retrieve vote count of a candidate.
     votes = candidate_votes[candidate_name]
@@ -61,7 +52,7 @@ for candidate_name in candidate_votes:
 
     #  To do: print out each candidate's name, vote count, and percentage of
     # votes to the terminal.
-    
+    print(f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")  
     # Determine winning vote count and candidate
     # Determine if the votes is greater than the winning count.
     if (votes > winning_count) and (vote_percentage > winning_percentage):
@@ -74,7 +65,6 @@ for candidate_name in candidate_votes:
 
 #  To do: print out the winning candidate, vote count and percentage to
 #   terminal.
-    print(f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
 winning_candidate_summary = (
     f"-------------------------\n"
     f"Winner: {winning_candidate}\n"
