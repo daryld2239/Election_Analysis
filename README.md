@@ -24,5 +24,6 @@ The purpsose of this project was to assist the Colorado Bourd of Elections to en
 
 ## Electionn - Audit Summary
 
+By using this script we were able to determine the winner of the election by county, percentage, and total number votes. In future this could be modified to tally all counties in the entire state to ensure that there is an accurate election. Futhermore, we could extend this script to include demographics to even more clear breakdown of the election turnout.  
 
 
